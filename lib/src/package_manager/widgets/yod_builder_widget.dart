@@ -15,8 +15,6 @@ class YodBuilder extends StatefulWidget {
 
 class _YodBuilderState extends State<YodBuilder> {
   Set<Kor> _detectedWatchers = {};
-  late Widget _child;
-
   @override
   void initState() {
     super.initState();
@@ -30,7 +28,7 @@ class _YodBuilderState extends State<YodBuilder> {
 
     YodProxy.startTracking();
 
-    _child = widget.builder();
+    widget.builder();
 
     final found = YodProxy.stopTracking();
 
@@ -43,11 +41,7 @@ class _YodBuilderState extends State<YodBuilder> {
   }
 
   void _update() {
-    if (mounted) {
-      setState(() {
-        _child = widget.builder();
-      });
-    }
+    if (mounted) setState(() {});
   }
 
   @override
@@ -61,5 +55,5 @@ class _YodBuilderState extends State<YodBuilder> {
   }
 
   @override
-  Widget build(BuildContext context) => _child;
+  Widget build(BuildContext context) => widget.builder();
 }
