@@ -1,1 +1,1 @@
-export 'src/src.dart';
+export 'src_manager/src.dart';

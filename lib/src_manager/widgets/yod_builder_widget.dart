@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:yod/src/core/domain/manager/kor_manager.dart';
-import 'package:yod/src/core/domain/manager/yod_proxy.dart';
+import 'package:yod/src_manager/core/domain/manager/kor_manager.dart';
+import 'package:yod/src_manager/core/domain/manager/yod_proxy.dart';
 
 typedef WidgetCallback = Widget Function();
 

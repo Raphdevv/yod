@@ -1,4 +1,4 @@
-import 'package:yod/src/core/domain/manager/kor_manager.dart';
+import 'package:yod/src_manager/core/domain/manager/kor_manager.dart';
 
 class YodProxy {
   static Set<Kor>? _currentWatchers;

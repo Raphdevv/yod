@@ -1,4 +1,4 @@
-import 'package:yod/src/core/domain/repositories/yod_interface.dart';
+import 'package:yod/src_manager/core/domain/repositories/yod_interface.dart';
 
 import '../../lifecycle/yod_manager_interface.dart';
 
@@ -15,7 +15,7 @@ class YodInstance extends YodInterface {
   T register<T>(T dependency) {
     final key = T;
     if (_singeltons.containsKey(key)) {
-      throw Exception('$key มีใน dependency แล้ว');
+      return dependency;
     }
     _singeltons[key] = dependency;
     if (dependency is YodManager) {
