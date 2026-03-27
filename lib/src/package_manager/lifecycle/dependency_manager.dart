@@ -1,5 +1,5 @@
-import 'package:yod/src_manager/core/data/yod_instance.dart';
-import 'package:yod/src_manager/core/domain/repositories/yod_interface.dart';
+import 'package:yod/src/package_manager/core/data/yod_instance.dart';
+import 'package:yod/src/package_manager/core/domain/repositories/yod_interface.dart';
 
 class Yod {
   static final YodInterface _instance = YodInstance();

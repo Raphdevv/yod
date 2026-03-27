@@ -1,4 +1,4 @@
-import 'package:yod/src_manager/core/domain/repositories/yod_interface.dart';
+import 'package:yod/src/package_manager/core/domain/repositories/yod_interface.dart';
 
 import '../../lifecycle/yod_manager_interface.dart';
 
