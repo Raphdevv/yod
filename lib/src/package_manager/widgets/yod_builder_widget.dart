@@ -15,6 +15,7 @@ class YodBuilder extends StatefulWidget {
 
 class _YodBuilderState extends State<YodBuilder> {
   Set<Kor> _detectedWatchers = {};
+  late Widget _child;
 
   @override
   void initState() {
@@ -23,9 +24,13 @@ class _YodBuilderState extends State<YodBuilder> {
   }
 
   void _makeConnection() {
+    for (var kor in _detectedWatchers) {
+      kor.removeListener(_update);
+    }
+
     YodProxy.startTracking();
 
-    widget.builder();
+    _child = widget.builder();
 
     final found = YodProxy.stopTracking();
 
@@ -37,7 +42,13 @@ class _YodBuilderState extends State<YodBuilder> {
     }
   }
 
-  void _update() => setState(() {});
+  void _update() {
+    if (mounted) {
+      setState(() {
+        _child = widget.builder();
+      });
+    }
+  }
 
   @override
   void dispose() {
@@ -50,5 +61,5 @@ class _YodBuilderState extends State<YodBuilder> {
   }
 
   @override
-  Widget build(BuildContext context) => widget.builder();
+  Widget build(BuildContext context) => _child;
 }
