@@ -13,7 +13,7 @@ class YodProxy {
     return watchers;
   }
 
-  static void register(Kor rx) {
-    _currentWatchers?.add(rx);
+  static void register(Kor kor) {
+    _currentWatchers?.add(kor);
   }
 }
